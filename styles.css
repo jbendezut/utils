@@ -1,58 +1,68 @@
-/* --- Reset básico --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Estilos globales */
 body {
-  font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(ellipse at bottom, #0d0d0d 0%, #000000 100%);
-  color: #00ffff;
-  min-height: 100vh;
-  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding: 20px;
+/* Contenedor de la grilla */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+  padding: 20px;
+  justify-items: center;
 }
 
-header {
-  text-align: center;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-.status-panel {
-  background-color: rgba(0, 255, 255, 0.1);
-  border: 1px solid #00ffff33;
-  padding: 15px;
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 0 10px #00ffff44;
-}
-
-.simulation {
-  flex: 1;
-  position: relative;
-}
-
-#spaceCanvas {
+/* Estilos del card */
+.card {
   width: 100%;
-  height: 100%;
-  background: black;
-  display: block;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-footer {
-  text-align: center;
-  font-size: 0.8em;
-  color: #555;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* Tipografía futurista */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+/* Estilos de la imagen */
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilos del contenido del card */
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.card-description {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
