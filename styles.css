@@ -1,0 +1,58 @@
+/* --- Reset básico --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(ellipse at bottom, #0d0d0d 0%, #000000 100%);
+  color: #00ffff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.status-panel {
+  background-color: rgba(0, 255, 255, 0.1);
+  border: 1px solid #00ffff33;
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px #00ffff44;
+}
+
+.simulation {
+  flex: 1;
+  position: relative;
+}
+
+#spaceCanvas {
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #555;
+}
+
+/* Tipografía futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
